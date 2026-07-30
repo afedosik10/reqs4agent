@@ -6,6 +6,10 @@ R4A turns a pile of business documents into a structured, git-native requirement
 
 This repository was created from the [R4A](https://github.com/afedosik10/reqs4agent) template. It is **your product's single source of truth** for requirements: vision → domains → epics → features → stories, every artifact Markdown + YAML with a stable ID, status, parent link, and source reference.
 
+## See it in action
+
+Not sure what the output looks like? **[examples/bakery-fleet-requirements](examples/bakery-fleet-requirements/)** is a complete worked case: a real discovery-phase Vision & Scope document (anonymized) went in — a validated requirements tree came out: 1 vision, 7 domains, 7 epics, 17 features, 18 stories, every artifact traced to its source section. A good way to calibrate expectations before your first ingest. (You can delete `examples/` from your own repo once you're comfortable.)
+
 ## Get started
 
 1. **Clone** this repo and open it in any agent tool (see "Works with" below).
@@ -43,6 +47,7 @@ scripts/     validate.py + frontmatter schemas
 docs/        the contract (CONTRACT.md)
 inbox/       business input awaiting ingest (archive/ holds processed input)
 releases/    release manifests
+examples/    worked end-to-end cases (input → output); safe to delete
 ```
 
 ## License
