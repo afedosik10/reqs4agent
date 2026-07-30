@@ -1,0 +1,24 @@
+version: "1.0"
+description: "OvenLink (OvenLink — Remote Control & Statistics) domain map"
+domains:
+  fleet_control:
+    description: "Remote control of multiple ovens: on/off, grouping by store, bulk operations"
+    code: FLT
+  recipes:
+    description: "Recipe and settings management across the fleet: download/upload, pictures/logos"
+    code: RCP
+  statistics:
+    description: "Oven statistics: energy consumption, temperatures, recipes stats, door events, service stats"
+    code: STAT
+  access_control:
+    description: "Roles and permissions: client-defined access hierarchy on top of panel roles"
+    code: ACC
+  software_updates:
+    description: "Centralized NB-touch panel software updates replacing manual USB flashing"
+    code: UPD
+  help_support:
+    description: "Help service: getting started, guides, tutorials, FAQ, 24/7 support"
+    code: HLP
+  localization:
+    description: "Multi-language support (SE/EN/CN/RU focus) and mechanism to add languages"
+    code: LOC

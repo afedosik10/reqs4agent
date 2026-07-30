@@ -3,6 +3,3 @@ __pycache__/
 .DS_Store
 node_modules/
 .obsidian/
-
-# framework spec — maintainer-local, intentionally not published
-spec/

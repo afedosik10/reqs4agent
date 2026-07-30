@@ -62,7 +62,7 @@ def find_root(start: Path) -> Path | None:
     return None
 
 def find_schemas(root: Path, script_dir: Path) -> Path | None:
-    for c in (script_dir.parent / "schemas", root / "core" / "schemas",
+    for c in (script_dir / "schemas", script_dir.parent / "schemas", root / "core" / "schemas",
               root / "schemas", root / "scripts" / "schemas"):
         if c.is_dir():
             return c
