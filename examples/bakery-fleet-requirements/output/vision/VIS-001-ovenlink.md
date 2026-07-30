@@ -100,5 +100,5 @@ A bakery chain owner opens OvenLink and sees every oven in every store: what is 
 
 ## References
 
-- **Source:** `../../input/vision-scope-document.docx` — anonymized Vision & Scope (v0.1, 2014-05-26); the Stage-2 ingest gate artifact is `../../input/vision-scope-document.proposal.yaml`
+- **Source:** `../../input/vision-scope-document.docx` — anonymized Vision & Scope (v0.1, 2014-05-26)
 - **Roadmap:** none yet — create via maintain playbook when planning starts
