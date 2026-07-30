@@ -9,9 +9,10 @@ This repository was created from the [R4A](https://github.com/afedosik10/reqs4ag
 ## Get started
 
 1. **Clone** this repo and open it in any agent tool (see "Works with" below).
-2. **Bootstrap** — tell the agent: *"execute `playbooks/bootstrap.md`"*. A guided dialog produces your domain map, vision, and glossary. You confirm the map before anything is written.
-3. **Ingest** — drop business documents (BRD, notes, transcripts) into `inbox/` and say: *"execute `playbooks/ingest.md`"*. The agent extracts a hierarchy, **stops for your confirmation**, then drafts artifacts. Gaps become open questions — never invented content.
-4. **Live** — day-to-day changes via `playbooks/maintain.md`; run `scripts/validate.py` (CI-friendly) on every change; cut releases via `releases/*.yaml`.
+2. **Install validator dependencies** (once): `pip install -r requirements.txt` (Python 3.10+).
+3. **Bootstrap** — tell the agent: *"execute `playbooks/bootstrap.md`"*. A guided dialog produces your domain map, vision, and glossary. You confirm the map before anything is written.
+4. **Ingest** — drop business documents (BRD, notes, transcripts) into `inbox/` and say: *"execute `playbooks/ingest.md`"*. The agent extracts a hierarchy, **stops for your confirmation**, then drafts artifacts. Gaps become open questions — never invented content.
+5. **Live** — day-to-day changes via `playbooks/maintain.md`; run `scripts/validate.py` (CI-friendly) on every change; cut releases via `releases/*.yaml`.
 
 ## Rules of the house (short version)
 
