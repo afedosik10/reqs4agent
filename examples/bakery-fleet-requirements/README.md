@@ -11,7 +11,7 @@ anonymized** — all company, product, partner, and person names are fictional.
 
 | | |
 |---|---|
-| **Input** | `input/vision-scope-document.docx` — the actual Vision & Scope document (2014, v0.1), fully anonymized (fictional company/product/supplier/person names; embedded figures removed). Exactly what a user would drop into `inbox/`. |
+| **Input** | `input/vision-scope-document.docx` — the actual Vision & Scope document (2014, v0.1), fully anonymized (fictional company/product/supplier/person names; embedded figures blanked — they showed real branding). Exactly what a user would drop into `inbox/`. |
 | **Output** | `output/` — a validated R4A requirements tree: 1 vision, 7 domains, 7 epics, 17 features, 18 stories + glossary. |
 
 ## What to look at
