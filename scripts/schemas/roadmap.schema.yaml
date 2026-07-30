@@ -1,0 +1,16 @@
+# R4A schema — roadmap frontmatter (FR-CON-012). JSON Schema draft 2020-12, YAML form.
+# parent_vision is REQUIRED: every roadmap serves a vision.
+$schema: "https://json-schema.org/draft/2020-12/schema"
+type: object
+additionalProperties: true
+required: [id, type, status, version, last_updated, owner, parent_vision]
+properties:
+  id:            { type: string, pattern: "^ROADMAP-[0-9]{3}$" }
+  type:          { const: roadmap }
+  status:        { enum: [draft, ready_for_review, approved, in_progress, implemented, postponed, deprecated] }
+  version:       { oneOf: [{ type: string, pattern: "^[0-9]+\\.[0-9]+$" }, { type: number }] }
+  last_updated:  { type: string, pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+  owner:         { type: string, minLength: 1 }
+  parent_vision: { type: string, pattern: "^VIS-[0-9]{3}$" }
+  see_also:      { oneOf: [{ type: string }, { type: array, items: { type: string } }] }
+  open_questions: { type: array, items: { type: string, minLength: 3, pattern: '^Q-\d+: ' } }

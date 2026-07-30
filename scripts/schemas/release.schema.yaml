@@ -1,0 +1,14 @@
+# R4A schema — releases/<version>.yaml manifest (FR-CON-010). JSON Schema draft 2020-12, YAML form.
+# Script-syncable from artifact frontmatter `release` fields; the manifest is evidence for
+# batch status transitions (LIFECYCLE.md §3).
+$schema: "https://json-schema.org/draft/2020-12/schema"
+type: object
+additionalProperties: true   # profiles may add fields (e.g. rp-specific metadata)
+required: [version, name]
+properties:
+  version: { type: string, minLength: 1 }   # release identifier, matches filename <version>.yaml
+  name:    { type: string, minLength: 1 }
+  scope:   { type: string }                 # optional stream/scope label (e.g. a vision or domain)
+  epics:    { type: array, items: { type: string, pattern: "^EPIC-[A-Z]{2,5}-[0-9]{3}$" } }
+  features: { type: array, items: { type: string, pattern: "^FEATURE-[A-Z]{2,5}-[0-9]{3}$" } }
+  stories:  { type: array, items: { type: string, pattern: "^US-[A-Z]{2,5}-[0-9]{3}$" } }
