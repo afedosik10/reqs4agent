@@ -38,7 +38,7 @@ Service statistics for Northbake support. Extracted from inbox/vision-scope-docu
 
 | ID | Story | Status |
 |----|-------|--------|
-| US-STAT-005 | [Northbake support can view service statistics of client ovens](../stories/US-STAT-005-sd-support-can-view-service-statistics-of-client.md) | draft |
+| US-STAT-005 | [Northbake support can view service statistics of client ovens](../stories/US-STAT-005-northbake-support-can-view-service-statistics-of-client.md) | draft |
 
 ---
 

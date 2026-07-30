@@ -11,7 +11,7 @@ anonymized** — all company, product, partner, and person names are fictional.
 
 | | |
 |---|---|
-| **Input** | A scope-level Vision & Scope document (2014, v0.1). The document itself is withheld for confidentiality; `input/vision-scope-document.proposal.yaml` shows the Stage-2 ingest proposal — the human gate artifact the owner reviewed before anything was written. |
+| **Input** | `input/vision-scope-document.docx` — the actual Vision & Scope document (2014, v0.1), fully anonymized (fictional company/product/supplier/person names; embedded figures removed). `input/vision-scope-document.proposal.yaml` is the Stage-2 ingest proposal — the human gate artifact the owner reviewed before anything was written. |
 | **Output** | `output/` — a validated R4A requirements tree: 1 vision, 7 domains, 7 epics, 17 features, 18 stories + glossary. |
 
 ## What to look at

@@ -58,7 +58,7 @@ source: inbox/vision-scope-document.docx
 | FEATURE-STAT-002 | [Temperature statistics](../features/FEATURE-STAT-002-temperature-statistics.md) | draft |
 | FEATURE-STAT-003 | [Production/recipe statistics](../features/FEATURE-STAT-003-production-recipe-statistics.md) | draft |
 | FEATURE-STAT-004 | [Door events statistics](../features/FEATURE-STAT-004-door-events-statistics.md) | draft |
-| FEATURE-STAT-005 | [Service statistics for Northbake support](../features/FEATURE-STAT-005-service-statistics-for-sd-support.md) | draft |
+| FEATURE-STAT-005 | [Service statistics for Northbake support](../features/FEATURE-STAT-005-service-statistics-for-northbake-support.md) | draft |
 
 ---
 

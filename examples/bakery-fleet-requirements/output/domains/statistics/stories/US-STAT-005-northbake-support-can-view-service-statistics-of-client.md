@@ -20,7 +20,7 @@ source: inbox/vision-scope-document.docx (4.2)
 
 **As a** Northbake support engineer
 **I want** view service statistics of client ovens
-**So that** we can support the installed base centrally.2.
+**So that** we can support the installed base centrally.
 
 ---
 
@@ -44,5 +44,5 @@ No UI designs exist yet — TBD (platform undecided, see VIS-001 open questions)
 
 ## References
 
-- **Parent feature:** [FEATURE-STAT-005](../features/FEATURE-STAT-005-service-statistics-for-sd-support.md)
+- **Parent feature:** [FEATURE-STAT-005](../features/FEATURE-STAT-005-service-statistics-for-northbake-support.md)
 - **Source:** inbox/vision-scope-document.docx (4.2)
