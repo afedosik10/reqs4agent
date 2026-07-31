@@ -1,12 +1,13 @@
 ---
 id: US-FLT-004
 type: user_story
-status: draft
-version: 0.1
-last_updated: '2026-07-29'
+status: approved
+version: 0.2
+last_updated: '2026-07-31'
 owner: example.owner
 domain: fleet_control
 parent_feature: FEATURE-FLT-003
+updated_by: US-FLT-005
 source: inbox/vision-scope-document.docx (4.2 Users Goals)
 ---
 

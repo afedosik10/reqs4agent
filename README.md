@@ -8,7 +8,7 @@ This repository was created from the [R4A](https://github.com/afedosik10/reqs4ag
 
 ## See it in action
 
-Not sure what the output looks like? **[examples/bakery-fleet-requirements](examples/bakery-fleet-requirements/)** is a complete worked case: a real discovery-phase Vision & Scope document (anonymized) went in — a validated requirements tree came out: 1 vision, 7 domains, 7 epics, 17 features, 18 stories, every artifact traced to its source section. A good way to calibrate expectations before your first ingest. (You can delete `examples/` from your own repo once you're comfortable.)
+Not sure what the output looks like? **[examples/bakery-fleet-requirements](examples/bakery-fleet-requirements/)** is a complete worked case: a real discovery-phase Vision & Scope document (anonymized) went in — a validated requirements tree came out: 1 vision, 7 domains, 7 epics, 17 features, 19 stories, every artifact traced to its source section. A good way to calibrate expectations before your first ingest. (You can delete `examples/` from your own repo once you're comfortable.)
 
 Note what the case proves: the first pass gives you a **validated skeleton** — vision, domain map, the full tree with source traces — while details missing from the source become open questions, never invented content. Detailing happens later, through the maintain playbook, as you answer those questions.
 

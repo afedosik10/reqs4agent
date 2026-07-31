@@ -38,7 +38,8 @@ Actions on many ovens at once. Extracted from inbox/vision-scope-document.docx.
 
 | ID | Story | Status |
 |----|-------|--------|
-| US-FLT-004 | [User can turn ON/OFF one or many ovens remotely](../stories/US-FLT-004-user-can-turn-on-off-one-or-many.md) | draft |
+| US-FLT-004 | [User can turn ON/OFF one or many ovens remotely](../stories/US-FLT-004-user-can-turn-on-off-one-or-many.md) | approved |
+| US-FLT-005 | [Bulk OFF warns on active baking and can be scheduled](../stories/US-FLT-005-bulk-off-warns-on-active-bake-and-scheduling.md) — CR to US-FLT-004 | draft |
 
 ---
 

@@ -12,7 +12,7 @@ anonymized** — all company, product, partner, and person names are fictional.
 | | |
 |---|---|
 | **Input** | `input/vision-scope-document.docx` — the actual Vision & Scope document (2014, v0.1), fully anonymized (fictional company/product/supplier/person names; embedded figures blanked — they showed real branding). Exactly what a user would drop into `inbox/`. |
-| **Output** | `output/` — a validated R4A requirements tree: 1 vision, 7 domains, 7 epics, 17 features, 18 stories + glossary. |
+| **Output** | `output/` — a validated R4A requirements tree: 1 vision, 7 domains, 7 epics, 17 features, 19 stories + glossary. |
 
 ## What to look at
 
@@ -21,6 +21,9 @@ anonymized** — all company, product, partner, and person names are fictional.
 - `output/domains/` — every artifact carries a `source:` trace back to a section of the input
 - `output/domains/fleet_control/stories/US-FLT-004-*` — decision-record pattern: safety gating
   for remote oven ON/OFF
+- `output/domains/fleet_control/stories/US-FLT-005-*` — **change request pattern**: the approved
+  baseline (US-FLT-004) is never edited; the delta arrives as a new story linked both ways
+  (`updates` / `updated_by`). The "current spec" = baseline + CR chain
 
 ## Verify it yourself
 
