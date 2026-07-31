@@ -1,0 +1,23 @@
+name: validate
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Validate requirements tree
+        run: |
+          if [ -f domains/structure.yaml ]; then
+            python scripts/validate.py .
+          else
+            echo "No requirements tree yet (pre-bootstrap) — skipping."
+          fi
+      - name: Validate bundled example
+        if: hashFiles('examples/bakery-fleet-requirements/output/domains/structure.yaml') != ''
+        run: python scripts/validate.py examples/bakery-fleet-requirements/output

@@ -1,5 +1,7 @@
 # R4A requirements repo — `<your product>`
 
+[![validate](https://github.com/afedosik10/reqs4agent/actions/workflows/validate.yml/badge.svg)](https://github.com/afedosik10/reqs4agent/actions/workflows/validate.yml)
+
 > **One repo, two teams — humans and AI agents.**
 
 R4A turns a pile of business documents into a structured, git-native requirements repo that both your team and your AI agents work from — the same files, the same rules.
