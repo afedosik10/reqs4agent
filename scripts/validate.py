@@ -10,7 +10,7 @@ Checks, per artifact file under domains/ and vision/:
   5. Domain code in the ID matches the code declared in domains/structure.yaml
   6. Parent links resolve: story->feature->epic->vision, roadmap->vision
   7. depends_on / see_also / updates / updated_by targets exist
-  8. updates/updated_by reciprocity (warning if one-sided)
+  8. updates/updated_by reciprocity, both directions (error if one-sided)
   9. open_questions entries carry unique local IDs (Q-<N>); the Open questions
      section in the body mirrors the frontmatter list (FR-CON-014)
  10. story bodies carry no ingest placeholder text ("value described in the source
@@ -214,7 +214,10 @@ def main() -> int:
                     err(rel, f"{f} target '{t}' does not resolve")
         for t in as_list(fm.get("updates")):
             if t in artifacts and aid not in as_list(artifacts[t][1].get("updated_by")):
-                warn(rel, f"updates {t}, but {t} has no updated_by back-link")
+                err(rel, f"updates {t}, but {t} has no updated_by back-link to {aid}")
+        for t in as_list(fm.get("updated_by")):
+            if t in artifacts and aid not in as_list(artifacts[t][1].get("updates")):
+                err(rel, f"updated_by {t}, but {t} has no updates back-link to {aid}")
 
     # ---- open questions mirror (FR-CON-014) ----
     for aid, (path, fm) in artifacts.items():
