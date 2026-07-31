@@ -31,7 +31,12 @@ python scripts/validate.py examples/bakery-fleet-requirements/output
 # → validate: 0 error(s), 0 warning(s)
 ```
 
-## Why the drafts are thin
+## The first deliverable is a skeleton — and that is the point
+
+One ingest pass does not produce "finished requirements". It produces a **validated skeleton**:
+a typed vision with goals, a 7-domain map, and a complete epic/feature/story tree with stable
+IDs and source traces. Building that by hand takes days; here it is one agent run plus a human
+review gate. The tree then grows through the maintain playbook as open questions get answered.
 
 Many fields are `TBD` — the source was scope-level. That is the contract working as designed:
 gaps become open questions, never invented content. Open the input docx next to the vision and
