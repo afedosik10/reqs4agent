@@ -1,81 +1,81 @@
-# R4A requirements repo — `<your product>`
-
-[![validate](https://github.com/afedosik10/reqs4agent/actions/workflows/validate.yml/badge.svg)](https://github.com/afedosik10/reqs4agent/actions/workflows/validate.yml)
+# R4A · Reqs4Agent
 
 > **One repo, two teams — humans and AI agents.**
 
-R4A turns a pile of business documents into a structured, git-native requirements repo that both your team and your AI agents work from — the same files, the same rules.
+R4A turns messy business documents into a clean, git-based requirements repository — one that your team **and** your AI agents can both work from. Same files, same rules, no translation layer in between.
 
-This repository was created from the [R4A](https://github.com/afedosik10/reqs4agent) template. It is **your product's single source of truth** for requirements: vision → domains → epics → features → stories, every artifact Markdown + YAML with a stable ID, status, parent link, and source reference.
+**Status:** pre-release · **License:** MIT · **Works with:** Claude Code, Cursor, Copilot, Kimi, Codex, and any agent that can read files.
 
-## See it in action
+---
 
-Not sure what the output looks like? **[examples/bakery-fleet-requirements](examples/bakery-fleet-requirements/)** is a complete worked case: a real discovery-phase Vision & Scope document (anonymized) went in — a validated requirements tree came out: 1 vision, 7 domains, 7 epics, 17 features, 19 stories, every artifact traced to its source section. A good way to calibrate expectations before your first ingest. (You can delete `examples/` from your own repo once you're comfortable.)
+## The problem we solve
 
-Note what the case proves: the first pass gives you a **validated skeleton** — vision, domain map, the full tree with source traces — while details missing from the source become open questions, never invented content. Detailing happens later, through the maintain playbook, as you answer those questions.
+Your product knowledge lives in BRDs, call notes, and chat threads. Your AI coding agent knows none of it — so every session starts with re-explaining your product. Wiki pages go stale. Specs drift away from reality.
 
-## Why R4A — measured, not promised
-
-Every requirements framework claims *"the agent won't invent facts and will follow the rules"*. Most ask you to trust the prose. R4A is built **Eval-Driven**: those claims are metrics with hard gates in CI, not adjectives in a README.
-
-| | Prose-only frameworks | R4A |
-|--|-----------------------|-----|
-| Quality claim | "the agent follows the contract" — trust us | gated metrics: no-invention, traceability, coverage, human-gate compliance, schema validity |
-| Proof of the claim | README adjectives | scores reported with N and 95% confidence intervals; run log is append-only |
-| Framework updates | silent quality drift | release **blocked in CI** if any metric drops > 2 pp vs the last released score |
-| "Prove it on **my** history" | — | turn your own requirements git-history into a golden dataset and measure R4A against **your** conventions, before adopting |
-
-**Current measured status** — public benchmark `examples/bakery-fleet-requirements` (golden v1.0, latest run 2026-08-31, grade-only harness smoke, self-judged — method caveats apply):
-
-| Metric | Gate | Latest | Status |
-|--------|------|--------|--------|
-| schema validity | 1.000 | 1.000 | ✅ |
-| human-gate compliance | 1.000 | 1.000 | ✅ |
-| traceability precision | ≥ 0.90 | 0.977 (n=43) | ✅ |
-| coverage recall | ≥ 0.80 | 0.977 (n=44) | ✅ |
-| no-invention rate | 1.000 | 0.953 (n=43) | ❌ below gate |
-
-Yes, we publish the row that **misses** its own gate — that's the point of measuring. The two flagged artifacts (2 of 43) contained facts absent from the source document; the fix lands before the next release tag, and the score updates here.
-
-## Get started
-
-1. **Clone** this repo and open it in any agent tool (see "Works with" below).
-2. **Install validator dependencies** (once): `pip install -r requirements.txt` (Python 3.10+).
-3. **Bootstrap** — tell the agent: *"execute `playbooks/bootstrap.md`"*. A guided dialog produces your domain map, vision, and glossary. You confirm the map before anything is written.
-4. **Ingest** — drop business documents (BRD, notes, transcripts) into `inbox/` and say: *"execute `playbooks/ingest.md`"*. The agent extracts a hierarchy, **stops for your confirmation**, then drafts artifacts. Gaps become open questions — never invented content.
-5. **Live** — day-to-day changes via `playbooks/maintain.md`; run `scripts/validate.py` (CI-friendly) on every change; cut releases via `releases/*.yaml`.
-
-## Rules of the house (short version)
-
-- Agents draft and propose; **only humans approve** (`status: approved` is human-only).
-- Open questions live in frontmatter with local IDs (`Q-1: …`) and are mirrored in the artifact body; resolving one requires a recorded **decision** with provenance.
-- Binding sections are filled from sourced facts only — `TBD` is legal, invention is a contract violation.
-- Full contract: `docs/CONTRACT.md`. Agent rules: `AGENTS.md` (picked up automatically by most tools).
-
-## Works with
-
-Any tool whose agent reads files — via the `AGENTS.md` standard and plain-Markdown playbooks.
-
-| Tool | Usage |
-|------|-------|
-| Claude Code / Cowork | Open the repo; ask to execute a playbook |
-| Cursor | `AGENTS.md` is picked up automatically; same ask |
-| GitHub Copilot | Same — AGENTS.md support is native |
-| Codex / Jules / Windsurf / Zed / Kimi / others | Same pattern |
-
-## Layout
+R4A fixes the missing step *before* coding: it turns business chaos into a living requirements repo — vision → domains → epics → features → user stories — that stays true because both humans and agents follow the same written contract.
 
 ```
-domains/     your requirements tree (structure.yaml is the domain map SSOT)
-vision/      vision & roadmap artifacts
+messy docs  →  R4A  →  structured requirements repo  →  your agents finally understand your product
+```
+
+## Easy to start. Seriously.
+
+**1.** Create your repo from this template (one click).
+**2.** Drop your documents into `inbox/`.
+**3.** Tell your agent: *"execute `playbooks/ingest.md`"*.
+
+That's it. The agent reads your docs, proposes a requirements hierarchy, and **stops to ask for your confirmation** before writing anything. Missing details become open questions — never invented facts. No new tool to learn, no UI, no SaaS account. If your agent can read files, it can run R4A.
+
+## See the result before you start
+
+**[examples/bakery-fleet-requirements](examples/bakery-fleet-requirements/)** is a complete real case: one Vision & Scope document in — a validated requirements tree out (1 vision, 7 domains, 7 epics, 17 features, 19 stories), every artifact linked back to its source section. Two minutes of reading tells you exactly what to expect.
+
+## Why R4A is different
+
+**1. It feeds your coding agents.** Tools like Spec Kit or OpenSpec turn specs into code — but they need a good spec first. R4A creates that spec from your messy business documents. It covers the step *before* them, the one nobody else does.
+
+**2. Humans stay in charge.** Agents draft and propose; only humans approve. Every change goes through a visible gate. `status: approved` is human-only — by contract, enforced in CI.
+
+**3. Measured, not promised.** Every framework claims *"the agent won't invent facts"*. We turned that claim into numbers with hard CI gates — and we publish them, including the misses:
+
+| Metric | Gate | Latest run (2026-08-31)* | Status |
+|--------|------|--------------------------|--------|
+| schema validity | 100% | 100% | ✅ |
+| human-gate compliance | 100% | 100% | ✅ |
+| traceability precision | ≥ 90% | 97.7% (n=43) | ✅ |
+| coverage recall | ≥ 80% | 97.7% (n=44) | ✅ |
+| no-invention rate | 100% | 95.3% (n=43) | ❌ below gate |
+
+*Harness smoke run, self-judged — method notes apply. We show the failing row on purpose: that's what "measured" means. The two flagged artifacts (of 43) contained facts absent from the source document; the fix ships before the next release tag.
+
+Framework updates are regression-gated: if any metric drops more than 2 points, the release is blocked. Quality can't silently degrade.
+
+**4. Prove it on *your* history.** Skeptical? If you already have a requirements repo, its git history can be turned into a test set — so you measure R4A against *your* conventions before you adopt it. No other prose-based framework can offer that, because they have nothing to measure with.
+
+## What's inside
+
+```
+domains/     your requirements tree (the source of truth)
+vision/      vision & roadmap
 playbooks/   bootstrap · ingest · maintain — agent procedures with human gates
-templates/   artifact templates (self-documenting)
-scripts/     validate.py + frontmatter schemas
-docs/        the contract (CONTRACT.md)
-inbox/       business input awaiting ingest (archive/ holds processed input)
-releases/    release manifests
-examples/    worked end-to-end cases (input → output); safe to delete
+templates/   self-documenting artifact templates
+scripts/     validate.py — CI-friendly checks of the whole tree
+docs/        the contract both teams follow
+inbox/       business input waiting for ingest
+examples/    worked end-to-end cases (safe to delete)
 ```
+
+## Principles
+
+1. **One repo, two teams** — no drift between "docs for people" and "context for AI".
+2. **Contract in files, not in prompts** — rules survive tool changes.
+3. **Gated, not generated** — agents never bulk-write; humans hold the gate.
+4. **Gaps become questions, never inventions.**
+5. **Quality is a number with a gate** — not an adjective.
+
+## What R4A is not
+
+Not a code generator. Not a project-management tool. Not another prompt collection. It is the structured requirements layer your agentic workflow is missing.
 
 ## License
 
