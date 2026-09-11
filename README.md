@@ -14,6 +14,29 @@ Not sure what the output looks like? **[examples/bakery-fleet-requirements](exam
 
 Note what the case proves: the first pass gives you a **validated skeleton** — vision, domain map, the full tree with source traces — while details missing from the source become open questions, never invented content. Detailing happens later, through the maintain playbook, as you answer those questions.
 
+## Why R4A — measured, not promised
+
+Every requirements framework claims *"the agent won't invent facts and will follow the rules"*. Most ask you to trust the prose. R4A is built **Eval-Driven**: those claims are metrics with hard gates in CI, not adjectives in a README.
+
+| | Prose-only frameworks | R4A |
+|--|-----------------------|-----|
+| Quality claim | "the agent follows the contract" — trust us | gated metrics: no-invention, traceability, coverage, human-gate compliance, schema validity |
+| Proof of the claim | README adjectives | scores reported with N and 95% confidence intervals; run log is append-only |
+| Framework updates | silent quality drift | release **blocked in CI** if any metric drops > 2 pp vs the last released score |
+| "Prove it on **my** history" | — | turn your own requirements git-history into a golden dataset and measure R4A against **your** conventions, before adopting |
+
+**Current measured status** — public benchmark `examples/bakery-fleet-requirements` (golden v1.0, latest run 2026-08-31, grade-only harness smoke, self-judged — method caveats apply):
+
+| Metric | Gate | Latest | Status |
+|--------|------|--------|--------|
+| schema validity | 1.000 | 1.000 | ✅ |
+| human-gate compliance | 1.000 | 1.000 | ✅ |
+| traceability precision | ≥ 0.90 | 0.977 (n=43) | ✅ |
+| coverage recall | ≥ 0.80 | 0.977 (n=44) | ✅ |
+| no-invention rate | 1.000 | 0.953 (n=43) | ❌ below gate |
+
+Yes, we publish the row that **misses** its own gate — that's the point of measuring. The two flagged artifacts (2 of 43) contained facts absent from the source document; the fix lands before the next release tag, and the score updates here.
+
 ## Get started
 
 1. **Clone** this repo and open it in any agent tool (see "Works with" below).
